@@ -4,10 +4,10 @@
 
 //SOLUTION
 
-function prefill(size_of_array, every_element_in_array) {
-    if (parseInt(size_of_array) == size_of_array) {
-        if (size_of_array > 0) {
-            let filled_Array = new Array(eval(size_of_array)).fill(every_element_in_array);
+function prefill(sizeOfArray, everyElementInArray) {
+    if (parseInt(sizeOfArray) == sizeOfArray) {
+        if (sizeOfArray > 0) {
+            let filled_Array = new Array(eval(sizeOfArray)).fill(everyElementInArray);
             return filled_Array;
         }
         else {
@@ -33,9 +33,9 @@ run_Solution_1();
 //QUESTION 2
 /* Given an input n, write a function always that returns a function which returns n. Ruby should return a lambda or a proc. */
 
-function always(number_to_be_returned) {
+function always(numberToBeReturned) {
     return function () {
-        return number_to_be_returned;
+        return numberToBeReturned;
     };
 }
 
@@ -63,24 +63,24 @@ callbacks[0](); // must return 0
 callbacks[3](); // must return 3 */
 
 
-function createFunctions(number_of_functions) {
-    var Array_of_functions = [];
+function createFunctions(numberOfFunctions) {
+    var arrayOfFunctions = [];
 
-    for (let position = 0; position < number_of_functions; position++) {
-        Array_of_functions.push(function () {
+    for (let position = 0; position < numberOfFunctions; position++) {
+        arrayOfFunctions.push(function () {
 
             return position;
         });
     }
 
-    return Array_of_functions;
+    return arrayOfFunctions;
 }
 
 function run_Solution_3() {
-    let All_functions = createFunctions(3);
-    console.log(All_functions[0]());
-    console.log(All_functions[1]());
-    console.log(All_functions[2]());
+    let allFunctions = createFunctions(3);
+    console.log(allFunctions[0]());
+    console.log(allFunctions[1]());
+    console.log(allFunctions[2]());
 }
 
 run_Solution_3();
