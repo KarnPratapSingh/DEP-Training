@@ -35,7 +35,7 @@ async function fetchVideos(pageToken) {
 
   //convert the response into JSON:
   const data = await response.json();
-  console.log(">>>", data);
+ 
   nextPageToken=data.nextPageToken;
   if(data.prevPageToken){
     previousPageToken=data.prevPageToken;
@@ -47,7 +47,7 @@ async function fetchVideos(pageToken) {
 
 //youtube cards generation:
 function generateHTML(results) {
-  //console.log(">>", results);
+  
   container.classList.remove("initial");
   let generatedHTML = "";
   results.map((result) => {
