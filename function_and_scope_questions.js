@@ -9,104 +9,70 @@ six(dividedBy(two())); // must return 3 */
 
 // Solution one:
 
-function zero(operation) {
-    if (operation) {
-        return parseInt(eval(`0${operation}`));
-    }
-    else {
-        return 0;
-    }
-}
-function one(operation) {
-    if (operation) {
-        return parseInt(eval(`1${operation}`));
-    }
-    else {
-        return 1;
-    }
-}
-function two(operation) {
-    if (operation) {
-        return parseInt(eval(`2${operation}`));
-    }
-    else {
-        return 2;
-    }
-}
-function three(operation) {
-    if (operation) {
-        return parseInt(eval(`3${operation}`));
-    }
-    else {
-        return 3;
-    }
-}
-function four(operation) {
-    if (operation) {
-        return parseInt(eval(`4${operation}`));
-    }
-    else {
-        return 4;
-    }
-}
-function five(operation) {
-    if (operation) {
-        return parseInt(eval(`5${operation}`));
-    }
-    else {
-        return 5;
-    }
-}
-function six(operation) {
-    if (operation) {
-        return parseInt(eval(`6${operation}`));
-    }
-    else {
-        return 6;
-    }
-}
-function seven(operation) {
-    if (operation) {
-        return parseInt(eval(`7${operation}`));
-    }
-    else {
-        return 7;
-    }
-}
-function eight(operation) {
-    if (operation) {
-        return parseInt(eval(`8${operation}`));
-    }
-    else {
-        return 8;
-    }
-}
-function nine(operation) {
-    if (operation) {
-        return parseInt(eval(`9${operation}`));
-    }
-    else {
-        return 9;
-    }
-}
+function evaluate(number, expression) {
+    if (!expression) return number;
+    return expression(number);
+  }
+  
+  function zero(callback) {
+    return evaluate(0, callback);
+  }
+  function one(callback) {
+    return evaluate(1, callback);
+  }
+  function two(callback) {
+    return evaluate(2, callback);
+  }
+  function three(callback) {
+    return evaluate(3, callback);
+  }
+  function four(callback) {
+    return evaluate(4, callback);
+  }
+  function five(callback) {
+    return evaluate(5, callback);
+  }
+  function six(callback) {
+    return evaluate(6, callback);
+  }
+  function seven(callback) {
+    return evaluate(7, callback);
+  }
+  function eight(callback) {
+    return evaluate(8, callback);
+  }
+  function nine(callback) {
+    return evaluate(9, callback);
+  }
+  
+  function plus(x) {
+    return function (y) {
+      return x + y;
+    };
+  }
+  function minus(x) {
+    return function (y) {
+      return y - x;
+    };
+  }
+  function times(x) {
+    return function (y) {
+      return x * y;
+    };
+  }
+  function dividedBy(x) {
+    return function (y) {
+      return Math.floor(y / x);
+    };
+  }
+  
 
-function plus(number) {
-    return `+${number}`;
-}
-function minus(number) {
-    return `-${number}`;
-}
-function times(number) {
-    return `*${number}`;
-}
-function dividedBy(number) {
-    return `/${number}`;
-}
+  function runSolutionOne(){
+    let answer=seven(times(five()));
+    console.log(answer);
+  }
 
-function run_solution_1() {
-    console.log(seven(times(five()))); // must return 35
-}
-run_solution_1();
+  runSolutionOne();
 
 
 // ------------------------------------------------------------------------------------------------------
@@ -124,11 +90,15 @@ return the middle character.
 
 function getMiddlePartofInputString(inputString) {
     //Code goes here!
-    if (inputString.length % 2 == 0) {
-        return inputString.substring(((inputString.length / 2) - 1), ((inputString.length / 2) + 1));
+    
+    let halfLengthOfString=inputString.length / 2;
+    let lengthIsEven=inputString.length % 2 == 0;
+    
+    if (lengthIsEven) {
+        return inputString.substring((halfLengthOfString - 1), (halfLengthOfString + 1));
     }
     else {
-        return inputString.substring(Math.floor(inputString.length / 2), (Math.floor(inputString.length / 2) + 1));
+        return inputString.substring(Math.floor(halfLengthOfString), (Math.floor(halfLengthOfString) + 1));
     }
 }
 
@@ -173,7 +143,7 @@ function partitionOn(items) {
     var newarray = [];
     function firstFillAllOddNumbers(items) {
         items.forEach(item => {
-            if (item % 2 != 0) {
+            if (item % 2 !== 0) {
                 newarray.push(item);
             }
         });
@@ -200,8 +170,8 @@ function partitionOn(items) {
 
     var indexOfFirstTrueValue = booleanArray.indexOf(true);
 
-    for (var i = 0; i < items.length; i++) {
-        items[i] = newarray[i];
+    for (var index = 0; index < items.length; index++) {
+        items[index] = newarray[index];
     } // changing the incoming array with the new array where first we have all the odd values then all the even values.
 
 
