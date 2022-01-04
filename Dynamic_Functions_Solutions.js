@@ -7,7 +7,7 @@
 function prefill(sizeOfArray, everyElementInArray) {
     if (parseInt(sizeOfArray) == sizeOfArray) {
         if (sizeOfArray > 0) {
-            let filled_Array = new Array(eval(sizeOfArray)).fill(everyElementInArray);
+            let filled_Array = new Array(+(sizeOfArray)).fill(everyElementInArray);
             return filled_Array;
         }
         else {
