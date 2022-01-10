@@ -1,4 +1,3 @@
-
 //HTML catching:
 const searchForm = document.querySelector("form");
 const searchResultDiv = document.querySelector(".search-result");
@@ -9,8 +8,8 @@ const API_KEY = "AIzaSyB2CL69PUQsH4j4lRmMFJmm07nE1dB8rTE";
 //Pagination:
 const Pagination = document.querySelector(".pagination");
 let initialSearch = 0;
-let nextPageToken='';
-let previousPageToken='';
+let nextPageToken = "";
+let previousPageToken = "";
 
 //Searching:
 let searchQuery = "";
@@ -18,7 +17,7 @@ let searchQuery = "";
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   searchQuery = e.target.querySelector("input").value;
-  initialSearch=0;
+  initialSearch = 0;
   //write the fetch API function: Because we are fetching it, we use async
   fetchVideos();
 });
@@ -26,28 +25,30 @@ searchForm.addEventListener("submit", (e) => {
 async function fetchVideos(pageToken) {
   // go the documentation and get the base url or path of the API:
 
-  const base_URL =
-    initialSearch === 0
-      ? `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}`
-      : `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}&pageToken=${pageToken}`;
-
+  const base_URL = getUrl(initialSearch, pageToken);
   const response = await fetch(base_URL);
 
   //convert the response into JSON:
   const data = await response.json();
- 
-  nextPageToken=data.nextPageToken;
-  if(data.prevPageToken){
-    previousPageToken=data.prevPageToken;
+
+  nextPageToken = data.nextPageToken;
+  if (data.prevPageToken) {
+    previousPageToken = data.prevPageToken;
   }
 
   generateHTML(data.items);
   pageNavigation();
 }
 
+// Fetching the required URL:
+function getUrl(initialSearch, pageToken) {
+  return initialSearch === 0
+    ? `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}`
+    : `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}&pageToken=${pageToken}`;
+}
+
 //youtube cards generation:
 function generateHTML(results) {
-  
   container.classList.remove("initial");
   let generatedHTML = "";
   results.map((result) => {
@@ -73,11 +74,11 @@ function pageNavigation() {
     `<button id="back">Back</button>` + `<button id="forward">Forward</button>`;
 
   document.getElementById("forward").addEventListener("click", () => {
-    initialSearch=initialSearch+1;
+    initialSearch = initialSearch + 1;
     fetchVideos(nextPageToken);
   });
   document.getElementById("back").addEventListener("click", () => {
-    initialSearch=initialSearch-1;
+    initialSearch = initialSearch - 1;
     fetchVideos(previousPageToken);
   });
 }
