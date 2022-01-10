@@ -1,11 +1,25 @@
+
+
+const numbers={
+  zero:0,
+  one:1,
+  two:2,
+  three:3,
+  four:4,
+  five:5,
+  six:6,
+  seven:7,
+  eight:8,
+  nine:9
+}
+
 //QUESTION 1:
 // input: ["apple","banana","orange"]
 //   output:"apple,banana,orange"
 
 function printArrayInStringFormat(array) {
   //show me the code!
-  var stringFromArray = array.toString();
-  return stringFromArray;
+  return array.toString();
 }
 
 //QUESTION 2:
@@ -14,13 +28,10 @@ function printArrayInStringFormat(array) {
 
 function opposite(number) {
   //your code here
-  var newNumber;
-  if (number > 0) {
-    newNumber = number - 2 * number;
-    return newNumber;
-  } else if (number < 0) {
-    newNumber = Math.abs(number);
-    return newNumber;
+  if (number > numbers.zero) {
+    return number - numbers.two * number;
+  } else if (number < numbers.zero) {
+    return Math.abs(number);
   } else {
     return number;
   }
@@ -32,13 +43,13 @@ function opposite(number) {
 
 function basicOp(operation, value1, value2) {
   // Code
-  if (operation == "+") {
+  if (operation === "+") {
     return value1 + value2;
-  } else if (operation == "-") {
+  } else if (operation === "-") {
     return value1 - value2;
-  } else if (operation == "*") {
+  } else if (operation === "*") {
     return value1 * value2;
-  } else if (operation == "/") {
+  } else if (operation === "/") {
     return value1 / value2;
   } else {
     return "Invalid operation";
@@ -58,11 +69,11 @@ Write a code that gives out the total amount for different days(d).*/
 
 function rentalCarCost(days) {
   // Your solution here
-  if (days >= 7) {
-    return days * 40 - 50;
-  } else if (days >= 3) {
-    return days * 40 - 20;
+  if (days >= numbers.seven) {
+    return days * (numbers.four*10) - (numbers.five*10);
+  } else if (days >= numbers.three) {
+    return days * (numbers.four*10) - (numbers.two*10);
   } else {
-    return days * 40;
+    return days * (numbers.four*10);
   }
 }
