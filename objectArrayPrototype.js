@@ -1,5 +1,3 @@
-
-
 /*QUESTION 1:
 
 Creating a CAT class that will keep record of all the cats registered and 
@@ -27,33 +25,28 @@ class CAT {
 
   averageWeight() {
     let sum = 0;
-    for (let i = 0; i < this.logs.length; i++) {
-      sum = sum + this.logs[i].weight;
+    for (let index = 0; index < this.logs.length; index++) {
+      sum = sum + this.logs[index].weight;
     }
     return sum / this.logs.length;
   }
 
   showAllCats() {
-    for (let i = 0; i < this.logs.length; i++) {
-      console.log(this.logs[i].name + " : " + this.logs[i].weight);
+    for (let index = 0; index < this.logs.length; index++) {
+      console.log(this.logs[index].name + " : " + this.logs[index].weight);
     }
   }
 }
 
-let garfield = new CAT();
+const garfield = new CAT();
 garfield.catStore("persia", 25);
 console.log(garfield.averageWeight());
 
-let mai = new CAT();
+const mai = new CAT();
 mai.catStore("pozo", 15);
 console.log(mai.averageWeight());
 
 mai.showAllCats(); // shows all the cats that are in the CAT class instance.
-
-
-
-
-
 
 /*QUESTION 2:  Aim of the program :  
 
@@ -62,7 +55,6 @@ add(1)(2)(3) => OUTPUT: 6
 add(2)(2) => OUTPUT: 4
 
 */
-
 
 //Solution 2:
 
@@ -81,17 +73,12 @@ function add(n) {
 
 console.log(add(1)(2)(1).valueOf());
 
-
-
-
-
-
 /* QUESTION 3:
 
-If you are calculating complex things or execute time-consuming API calls, you sometimes want to cache the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.
+If you are calculating complex things or execute time-consuming API calls, you sometimes want to cacheLogs the results. In this case we want you to create a function wrapper, which takes a function and caches its results depending on the arguments, that were applied to the function.
 Usage example:
 var complexFunction = function(arg1, arg2) { complex calculation in here };
-var cachedFunction = cache(complexFunction);
+var cachedFunction = cacheLogs(complexFunction);
 
 cachedFunction('foo', 'bar'); // complex function should be executed
 cachedFunction('foo', 'bar'); // complex function should not be invoked again, instead the cached result should be returned
@@ -100,7 +87,7 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 
 // Solution 3:
 
-function cache(complexfunction) {
+function cacheLogs(complexfunction) {
   const argumentsLogs = {};
 
   return function () {
@@ -111,9 +98,6 @@ function cache(complexfunction) {
     return argumentsLogs[arguments];
   };
 }
-
-
-
 
 /*QUESTION 4:  Aim of the program :
 
@@ -130,12 +114,6 @@ function compose(outerFunction, innerFunction) {
   };
 }
 
-
-
-
-
-
-
 /*QUESTION 5:  Aim of the program :
 
 compose(multTwo, addOne)(5) => OUTPUT: 12, 'compose two functions'
@@ -146,20 +124,19 @@ compose(addOne, multTwo, addOne, addOne)(2) => OUTPUT: 9, 'compose four function
 //Solution 5:
 
 function compose() {
-
   var numberOfArguments = arguments.length;
   var arrayOfFunctions = [];
 
-  for (var index = 0; index < numberOfArguments; ++index)
-  {
+  for (var index = 0; index < numberOfArguments; ++index) {
     arrayOfFunctions.push(arguments[numberOfArguments - 1 - index]);
   }
-    
 
   return function (n) {
-
-    for (var indexOfFunction = 0; indexOfFunction < numberOfArguments; ++indexOfFunction) 
-    {
+    for (
+      var indexOfFunction = 0;
+      indexOfFunction < numberOfArguments;
+      ++indexOfFunction
+    ) {
       n = arrayOfFunctions[indexOfFunction](n);
     }
 
