@@ -1,0 +1,19 @@
+{
+  "name": "dep-training",
+  "version": "1.0.0",
+  "description": "node assessment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarnPratapSingh/DEP-Training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarnPratapSingh/DEP-Training/issues"
+  },
+  "homepage": "https://github.com/KarnPratapSingh/DEP-Training#readme"
+}
