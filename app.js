@@ -16,7 +16,7 @@ Note: Please note that addition and multiplication takes "n” values for inputs
 // Solution:
 
 // Get the type of operation:
-let operation = process.argv.slice(3, 4);
+let operation = process.argv[3];
 console.log(operation);
 
 // Get all the input numbers:
@@ -30,27 +30,29 @@ for (let index = 0; index < inputNumbers.length; index++) {
 }
 
 function performOperation(operation, numbers) {
-  switch (operation[0]) {
+  switch (operation) {
     case "addition":
-      addOperation(numbers);
+      add(numbers);
       break;
     case "subtraction":
-      subtractionOperation(numbers);
+      subtract(numbers);
       break;
     case "multiplication":
-      multiplyOperation(numbers);
+      multiply(numbers);
       break;
     case "division":
-      divideOperation(numbers);
+      divide(numbers);
       break;
     default:
       console.log("Invalid operation.");
   }
 }
 
-function addOperation(numbers) {
-  if (numbers.length == 1) {
+function add(numbers) {
+  if (numbers.length === 1) {
     console.log("Can't perform addition operation over one input");
+  } else if (numbers.length === 0) {
+    console.log("No inputs. Can't perform operation.");
   } else {
     let sum = numbers.reduce((acc, curr) => {
       return acc + curr;
@@ -59,9 +61,11 @@ function addOperation(numbers) {
   }
 }
 
-function multiplyOperation(numbers) {
-  if (numbers.length == 1) {
+function multiply(numbers) {
+  if (numbers.length === 1) {
     console.log("Can't perform multiplication operation over one input");
+  } else if (numbers.length === 0) {
+    console.log("No inputs. Can't perform operation.");
   } else {
     let result = numbers.reduce((acc, curr) => {
       return acc * curr;
@@ -70,9 +74,11 @@ function multiplyOperation(numbers) {
   }
 }
 
-function subtractionOperation(numbers) {
-  if (numbers.length == 1) {
+function subtract(numbers) {
+  if (numbers.length === 1) {
     console.log("Can't perform subtraction operation over one input");
+  } else if (numbers.length === 0) {
+    console.log("No inputs. Can't perform operation.");
   } else if (numbers.length > 2) {
     console.log("Can't perform subtraction operation over more than 2 input");
   } else {
@@ -80,9 +86,11 @@ function subtractionOperation(numbers) {
   }
 }
 
-function divideOperation(numbers) {
-  if (numbers.length == 1) {
+function divide(numbers) {
+  if (numbers.length === 1) {
     console.log("Can't perform division operation over one input");
+  } else if (numbers.length === 0) {
+    console.log("No inputs. Can't perform operation.");
   } else if (numbers.length > 2) {
     console.log("Can't perform division operation over more than 2 input");
   } else if (numbers[1] === 0) {
