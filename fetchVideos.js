@@ -42,9 +42,8 @@ async function fetchVideos(pageToken) {
 
 // Fetching the required URL:
 function getUrl(initialSearch, pageToken) {
-  return initialSearch === 0
-    ? `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}`
-    : `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}&pageToken=${pageToken}`;
+  const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&type=video&part=snippet&maxResults=15&q=${searchQuery}`;
+  return initialSearch === 0 ? url : `${url}&pageToken=${pageToken}`;
 }
 
 //youtube cards generation:
