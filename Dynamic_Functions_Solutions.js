@@ -64,9 +64,7 @@ function createFunctions(numberOfFunctions) {
 
 function runSolution3() {
   let allFunctions = createFunctions(3);
-  console.log(allFunctions[0]());
-  console.log(allFunctions[1]());
-  console.log(allFunctions[2]());
+  allFunctions.forEach((fn) => console.log(fn()));
 }
 
 runSolution3();
