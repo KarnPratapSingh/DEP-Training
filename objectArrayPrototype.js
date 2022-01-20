@@ -88,14 +88,14 @@ cachedFunction('foo', 'baz'); // should be executed, because the method wasn't i
 // Solution 3:
 
 function cacheLogs(complexfunction) {
-  const argumentsLogs = {};
+  const cacheData = {};
 
   return function () {
     const arguments = JSON.stringify(arguments);
-    if (!(arguments in argumentsLogs))
-      argumentsLogs[arguments] = complexfunction(...arguments);
+    if (!(arguments in cacheData))
+      cacheData[arguments] = complexfunction(...arguments);
 
-    return argumentsLogs[arguments];
+    return cacheData[arguments];
   };
 }
 
@@ -132,13 +132,9 @@ function compose() {
   }
 
   return function (n) {
-    for (
-      var indexOfFunction = 0;
-      indexOfFunction < numberOfArguments;
-      ++indexOfFunction
-    ) {
-      n = arrayOfFunctions[indexOfFunction](n);
-    }
+    arrayOfFunctions.forEach((currentFunction) => {
+      n = currentFunction(n);
+    });
 
     return n;
   };
