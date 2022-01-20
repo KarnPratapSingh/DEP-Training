@@ -1,17 +1,16 @@
-
-
-const numbers={
-  zero:0,
-  one:1,
-  two:2,
-  three:3,
-  four:4,
-  five:5,
-  six:6,
-  seven:7,
-  eight:8,
-  nine:9
-}
+const numbers = {
+  zero: 0,
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  ten: 10,
+};
 
 //QUESTION 1:
 // input: ["apple","banana","orange"]
@@ -56,7 +55,7 @@ function basicOp(operation, value1, value2) {
   }
 }
 
-basicOp("+", 1, 2);
+basicOp("+", numbers.one, numbers.two);
 
 //QUESTION 4:
 /*  After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
@@ -70,10 +69,10 @@ Write a code that gives out the total amount for different days(d).*/
 function rentalCarCost(days) {
   // Your solution here
   if (days >= numbers.seven) {
-    return days * (numbers.four*10) - (numbers.five*10);
+    return days * (numbers.four * numbers.ten) - numbers.five * numbers.ten;
   } else if (days >= numbers.three) {
-    return days * (numbers.four*10) - (numbers.two*10);
+    return days * (numbers.four * numbers.ten) - numbers.two * numbers.ten;
   } else {
-    return days * (numbers.four*10);
+    return days * (numbers.four * numbers.ten);
   }
 }
