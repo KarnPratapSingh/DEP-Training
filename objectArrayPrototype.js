@@ -8,7 +8,7 @@ the cats that were registered.  */
 
 class CAT {
   constructor() {
-    if (CAT.instance == null) {
+    if (CAT.instance === null) {
       this.logs = [];
       CAT.instance = this;
     } else {
@@ -33,7 +33,7 @@ class CAT {
 
   showAllCats() {
     for (let index = 0; index < this.logs.length; index++) {
-      console.log(this.logs[index].name + " : " + this.logs[index].weight);
+      console.log(`${this.logs[index].name} :  ${this.logs[index].weight}`);
     }
   }
 }
