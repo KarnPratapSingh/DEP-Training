@@ -1,0 +1,9 @@
+<div *ngFor="let user of userData">
+  <div class="card space" style="border: 1.5px solid green;" *ngIf="user.isDeleted==false">
+    <div class="card-body">
+        <h5 class="card-title">{{user.firstName | fullname : user.lastName}}</h5>
+        <a href="#" class="btn btn-danger button-position">{{user.isDeleted | userActiveButton}}</a>
+      </div>
+</div>
+</div>
+

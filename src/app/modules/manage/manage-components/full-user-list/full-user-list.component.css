@@ -1,0 +1,15 @@
+.space{
+    margin-bottom: 5px;
+}
+
+.active-user{
+    border: 1.5px solid green;
+}
+
+.deleted-user{
+    border: 1.5px solid red;
+}
+
+.button-position{
+    float: right;
+}

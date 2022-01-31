@@ -1,0 +1,30 @@
+<div class="card" style="width: 30rem;">
+    
+    <div class="card-body">
+        <h5 class="card-title">{{selectedUser.firstName}} {{selectedUser.lastName}}</h5>
+      <p class="card-text" style="color: green; font-weight: bold;" *ngIf="selectedUser.isDeleted==false">Active</p>
+      <p class="card-text" style="color: red; font-weight: bold;" *ngIf="selectedUser.isDeleted==true">Deleted</p>
+      <div style="display: flex; gap:40%">
+          <div>
+            <p class="card-text">Login ID</p>
+            
+            <p class="card-text">First Name</p>
+            
+            <p class="card-text">Last Name</p>
+            
+            <p class="card-text">Age</p>
+            
+          </div>
+          <div>
+            <p class="card-text">{{selectedUser.login}}</p>
+            
+            <p class="card-text">{{selectedUser.firstName}}</p>
+            
+            <p class="card-text">{{selectedUser.lastName}}</p>
+            
+            <p class="card-text">{{selectedUser.age}}</p>
+            
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,34 @@
+<div>
+    <button style="float: right;" class="btn btn-success" type="submit" (click)="createForm()">Create</button>
+</div>
+<div style="display: flex; gap:6%">
+
+
+    <div>
+        <div class="card space" style="width: 32rem;" *ngFor="let user of userData; let indexOfElement=index">
+
+            <div [ngClass]="user.isDeleted == false ? 'card-body active-user': 'card-body deleted-user'">
+                <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                <button type="button" class="btn btn-warning" (click)="editUserForm(indexOfElement)">Edit</button>
+              <a class="btn btn-primary button-position"  (click)="sendDetailsToPreview(indexOfElement)">Details</a>
+            </div>
+          </div>
+
+    </div>
+
+    <div class="preview-Component" style="margin-top: 45px;">
+        <app-user-details *ngIf="showPreviewComponent==true" [user]="selectedUser"></app-user-details>
+    </div>
+
+    <div class="preview-Component" style="margin-top: 45px;">
+        <app-user-form *ngIf="showUserForm==true"></app-user-form>
+    </div>
+
+    <div class="edit-Component" style="margin-top: 45px;">
+        <app-edit-user *ngIf="showEditUserForm==true" [user]="selectedUser"></app-edit-user>
+    </div>
+
+
+</div>
+
+
