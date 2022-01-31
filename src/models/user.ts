@@ -23,6 +23,6 @@ export const User = sequelize.define(
   },
   {
     paranoid: true,
-    deletedAt: "softDelete",
+    deletedAt: "user-deactivated",
   }
 );
