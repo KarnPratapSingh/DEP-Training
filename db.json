@@ -1,0 +1,236 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Dybook",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 2,
+      "title": "Veronic Hallabel",
+      "description": "Regular new book. Thriller",
+      "author": "VerHall-author",
+      "pageCount": 200,
+      "ISBN": 12234,
+      "price": 100,
+      "inCart": true,
+      "bought": false
+    },
+    {
+      "id": 3,
+      "title": "Yolo Paging",
+      "description": "Regular new book. Thriller",
+      "author": "Paging-author",
+      "pageCount": 200,
+      "ISBN": 12343,
+      "price": 100,
+      "inCart": true,
+      "bought": false
+    },
+    {
+      "id": 4,
+      "title": "Wonders Cars",
+      "description": "Regular new book. Thriller",
+      "author": "Cars-author",
+      "pageCount": 200,
+      "ISBN": 112234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 5,
+      "title": "Gracious Man",
+      "description": "Regular new book. Thriller",
+      "author": "Man-author",
+      "pageCount": 200,
+      "ISBN": 88234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 6,
+      "title": "Bipolar",
+      "description": "Regular new book. Thriller",
+      "author": "Psycho-author",
+      "pageCount": 200,
+      "ISBN": 9987,
+      "price": 90,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 7,
+      "title": "Seven",
+      "description": "Regular new book. Thriller",
+      "author": "Secet-author",
+      "pageCount": 200,
+      "ISBN": 99088,
+      "price": 89,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 8,
+      "title": "Pennisula",
+      "description": "Regular new book. Thriller",
+      "author": "Gulf-author",
+      "pageCount": 220,
+      "ISBN": 8876,
+      "price": 78,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 9,
+      "title": "Indian",
+      "description": "Regular new book. Thriller",
+      "author": "Indian-author",
+      "pageCount": 890,
+      "ISBN": 9090,
+      "price": 770,
+      "inCart": true,
+      "bought": false
+    },
+    {
+      "id": 10,
+      "title": "The Ten Men",
+      "description": "Regular new book. Thriller",
+      "author": "TenMen-author",
+      "pageCount": 200,
+      "ISBN": 8890,
+      "price": 100,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 11,
+      "title": "Toinge",
+      "description": "Regular new book. Thriller",
+      "author": "Yolo-author",
+      "pageCount": 200,
+      "ISBN": 8080,
+      "price": 777,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 12,
+      "title": "Dybook Part 2",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 13,
+      "title": "Dybook part 3",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 14,
+      "title": "Dybook part 4",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 15,
+      "title": "Dybook part 5",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": true,
+      "bought": false
+    }
+  ],
+  "address": [
+    {
+      "fullName": "Karn Pratap Singh-",
+      "email": "Radhakpsingh8960@gmail-",
+      "address": "79-B, Malapuram Coloni, Balaganj, Chowk-",
+      "cityAndState": "Lucknow. Uttar Pradesh-edited",
+      "id": 1
+    }
+  ],
+  "myOrders": [
+    {
+      "id": 1,
+      "title": "Dybook",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": false,
+      "bought": true
+    },
+    {
+      "id": 7,
+      "title": "Seven",
+      "description": "Regular new book. Thriller",
+      "author": "Secet-author",
+      "pageCount": 200,
+      "ISBN": 99088,
+      "price": 89,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 2,
+      "title": "Veronic Hallabel",
+      "description": "Regular new book. Thriller",
+      "author": "VerHall-author",
+      "pageCount": 200,
+      "ISBN": 12234,
+      "price": 100,
+      "inCart": true,
+      "bought": false
+    },
+    {
+      "id": 10,
+      "title": "The Ten Men",
+      "description": "Regular new book. Thriller",
+      "author": "TenMen-author",
+      "pageCount": 200,
+      "ISBN": 8890,
+      "price": 100,
+      "inCart": false,
+      "bought": false
+    },
+    {
+      "id": 15,
+      "title": "Dybook part 5",
+      "description": "Regular new book. Thriller",
+      "author": "Dybook-author",
+      "pageCount": 200,
+      "ISBN": 1234,
+      "price": 100,
+      "inCart": true,
+      "bought": false
+    }
+  ],
+  "inCart": []
+}
